@@ -1,0 +1,8 @@
+prefix=/home/pi/workspace/BotPico/install
+
+Name: pi_face_tracker_gui
+Description: Description of pi_face_tracker_gui
+Version: 0.1.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: rospy roscpp pi_face_tracker

@@ -1,0 +1,8 @@
+prefix=/home/pi/workspace/BotPico/devel
+
+Name: robot_params
+Description: Description of robot_params
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

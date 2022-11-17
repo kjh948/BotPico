@@ -1,0 +1,2 @@
+set(pi_face_tracker_MESSAGE_FILES "/home/pi/workspace/BotPico/src/pi_vision/pi_face_tracker/msg/FaceEvent.msg;/home/pi/workspace/BotPico/src/pi_vision/pi_face_tracker/msg/Face.msg;/home/pi/workspace/BotPico/src/pi_vision/pi_face_tracker/msg/Faces.msg")
+set(pi_face_tracker_SERVICE_FILES "/home/pi/workspace/BotPico/src/pi_vision/pi_face_tracker/srv/KeyCommand.srv;/home/pi/workspace/BotPico/src/pi_vision/pi_face_tracker/srv/SetROI.srv")

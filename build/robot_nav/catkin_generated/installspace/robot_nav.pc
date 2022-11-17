@@ -1,0 +1,8 @@
+prefix=/home/pi/workspace/BotPico/install
+
+Name: robot_nav
+Description: Description of robot_nav
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

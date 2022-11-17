@@ -10,9 +10,9 @@ import rospy
 from rosserial_arduino.srv import *
 
 def callback(req):
-    print "The arduino is calling! Please send it a message:"
+    print("The arduino is calling! Please send it a message:")
     t = TestResponse()
-    t.output = raw_input()
+    t.output = input()
     return t
 
 rospy.init_node("service_client_test")

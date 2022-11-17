@@ -1,0 +1,2 @@
+bringup:odom_pub:pi_vision/pi_face_tracker:pi_vision/pi_face_tracker_gui:pi_vision/pi_vision:pi_vision/ros2opencv:robot_nav:robot_params:test_drive:wheels
+-DCATKIN_DEVEL_PREFIX=/home/pi/workspace/BotPico/devel -DCMAKE_INSTALL_PREFIX=/home/pi/workspace/BotPico/install -G Unix Makefiles
