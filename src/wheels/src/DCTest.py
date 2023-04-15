@@ -4,7 +4,7 @@ from Emakefun_MotorHAT import Emakefun_MotorHAT, Emakefun_DCMotor, Emakefun_Serv
 import time
 import atexit
 
-vel = 255
+vel = 25
 # create a default object, no changes to I2C address or frequency
 mh = Emakefun_MotorHAT(addr=0x60)
 
@@ -26,7 +26,7 @@ myMotorL.setSpeed(vel)
 myMotorR.setSpeed(vel)
 myMotorL.run(Emakefun_MotorHAT.BACKWARD)
 myMotorR.run(Emakefun_MotorHAT.FORWARD)
-time.sleep(1)
+time.sleep(3)
 # turn on motor
 myMotorL.run(Emakefun_MotorHAT.RELEASE)
 myMotorR.run(Emakefun_MotorHAT.RELEASE)

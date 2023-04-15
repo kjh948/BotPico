@@ -75,8 +75,8 @@ pi_vision/pi_face_tracker/CMakeFiles/pi_face_tracker_generate_messages_cpp: /hom
 
 /home/pi/workspace/BotPico/devel/include/pi_face_tracker/Faces.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/pi/workspace/BotPico/devel/include/pi_face_tracker/Faces.h: /home/pi/workspace/BotPico/src/pi_vision/pi_face_tracker/msg/Faces.msg
-/home/pi/workspace/BotPico/devel/include/pi_face_tracker/Faces.h: /home/pi/workspace/BotPico/src/pi_vision/pi_face_tracker/msg/Face.msg
 /home/pi/workspace/BotPico/devel/include/pi_face_tracker/Faces.h: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/pi/workspace/BotPico/devel/include/pi_face_tracker/Faces.h: /home/pi/workspace/BotPico/src/pi_vision/pi_face_tracker/msg/Face.msg
 /home/pi/workspace/BotPico/devel/include/pi_face_tracker/Faces.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pi/workspace/BotPico/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating C++ code from pi_face_tracker/Faces.msg"
 	cd /home/pi/workspace/BotPico/src/pi_vision/pi_face_tracker && /home/pi/workspace/BotPico/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/pi/workspace/BotPico/src/pi_vision/pi_face_tracker/msg/Faces.msg -Ipi_face_tracker:/home/pi/workspace/BotPico/src/pi_vision/pi_face_tracker/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p pi_face_tracker -o /home/pi/workspace/BotPico/devel/include/pi_face_tracker -e /opt/ros/noetic/share/gencpp/cmake/..

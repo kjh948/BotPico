@@ -37,11 +37,17 @@ DWELL = 4  # seconds to dwell at each speed
 # right_enc_A_pin = 23
 # right_enc_B_pin = 24
 #E1
-left_enc_A_pin = 5
-left_enc_B_pin = 6
+# left_enc_A_pin = 5
+# left_enc_B_pin = 6
 
-right_enc_A_pin = 13
-right_enc_B_pin = 19
+# right_enc_A_pin = 13
+# right_enc_B_pin = 19
+
+left_enc_A_pin = 13
+left_enc_B_pin = 19
+right_enc_A_pin = 5
+right_enc_B_pin = 6
+
 
 L_mode = 'OFF'  # motor mode: 'FWD', 'REV', 'OFF'
 R_mode = 'OFF'

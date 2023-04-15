@@ -8,28 +8,32 @@ Publish robot parameters for various reasons:
 See doc at http://wiki.ros.org/rospy/Overview/Parameter%20Server
 """
 import rospy
+import time
 
 # Robot parameter values
-ROBOT_TICKS_PER_REV = 686.4  # 24:1 worm, 26:10 spur, 11 pole encoder magnet
-ROBOT_WHEEL_CIRCUMFERENCE = 0.213  # meters
+ROBOT_TICKS_PER_REV = 1260  # 105rpmx12tick per revol?? 86*12=
+# ROBOT_TICKS_PER_REV = 1032*0.27/0.5  # 86*12=
+ROBOT_WHEEL_CIRCUMFERENCE = 0.13502  # meters, 43mmX2pi 
+# ROBOT_WHEEL_CIRCUMFERENCE = 0.8478  # meters, 43mmXpi 
 ROBOT_TICKS_PER_METER = int(ROBOT_TICKS_PER_REV / ROBOT_WHEEL_CIRCUMFERENCE)
-ROBOT_TRACK_WIDTH = .187  # Wheel Separation Distance (meters)
-ROBOT_MIN_PWM_VAL = 80  # Minimum PWM value motors will turn reliably
+ROBOT_TRACK_WIDTH = 0.075  # Wheel Separation Distance (meters)
+ROBOT_MIN_PWM_VAL = 5  # Minimum PWM value motors will turn reliably
 ROBOT_MAX_PWM_VAL = 255  # Maximum allowable PWM value
-ROBOT_MIN_X_VEL = 0.1  # Minimum x velocity robot can manage (m/s)
-ROBOT_MAX_X_VEL = 0.25  # Maximum x velocity robot can manage (m/s)
-ROBOT_MIN_Z_VEL = 0.8  # Minimum theta-z velocity robot can manage (rad/s)
+ROBOT_MIN_X_VEL = 0.01  # Minimum x velocity robot can manage (m/s)
+ROBOT_MAX_X_VEL = 0.5  # Maximum x velocity robot can manage (m/s)
+ROBOT_MIN_Z_VEL = 0.1  # Minimum theta-z velocity robot can manage (rad/s)
 ROBOT_MAX_Z_VEL = 3.0  # Maximum theta-z velocity robot can manage (rad/s)
-ROBOT_MTR_KP = 0.5  # Proportional coeff
-ROBOT_MTR_KD = 0.2  # Derivative coeff
+# ROBOT_MTR_KP = 0.8  # Proportional coeff
+ROBOT_MTR_KP = 0.3  # Proportional coeff
+ROBOT_MTR_KD = 0.05  # Derivative coeff
 ROBOT_MTR_MAX_PID_TRIM = 30  # Max allowable value for PID trim term
 
 # end points of segments of piecewise linear curve in descending order
 # where curve relates tick rate (tr) to motor speed (s)
-ROBOT_TRS_CURVE = ((892, 240),
-                   (578, 140),
-                   (360, 100),
-                   (142, 80))
+ROBOT_TRS_CURVE = ((2018, 240),
+                   (1870, 140),
+                   (1738, 100),
+                   (1620, 80))
 
 param_dict = {
     'ROBOT_TICKS_PER_REV': ROBOT_TICKS_PER_REV,

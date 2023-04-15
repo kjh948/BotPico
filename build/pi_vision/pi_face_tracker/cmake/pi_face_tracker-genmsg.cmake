@@ -29,7 +29,7 @@ add_custom_target(_pi_face_tracker_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/pi/workspace/BotPico/src/pi_vision/pi_face_tracker/msg/Faces.msg" NAME_WE)
 add_custom_target(_pi_face_tracker_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "pi_face_tracker" "/home/pi/workspace/BotPico/src/pi_vision/pi_face_tracker/msg/Faces.msg" "pi_face_tracker/Face:geometry_msgs/Point"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "pi_face_tracker" "/home/pi/workspace/BotPico/src/pi_vision/pi_face_tracker/msg/Faces.msg" "geometry_msgs/Point:pi_face_tracker/Face"
 )
 
 get_filename_component(_filename "/home/pi/workspace/BotPico/src/pi_vision/pi_face_tracker/srv/KeyCommand.srv" NAME_WE)
@@ -63,7 +63,7 @@ _generate_msg_cpp(pi_face_tracker
 _generate_msg_cpp(pi_face_tracker
   "/home/pi/workspace/BotPico/src/pi_vision/pi_face_tracker/msg/Faces.msg"
   "${MSG_I_FLAGS}"
-  "/home/pi/workspace/BotPico/src/pi_vision/pi_face_tracker/msg/Face.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/pi/workspace/BotPico/src/pi_vision/pi_face_tracker/msg/Face.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/pi_face_tracker
 )
 
@@ -128,7 +128,7 @@ _generate_msg_eus(pi_face_tracker
 _generate_msg_eus(pi_face_tracker
   "/home/pi/workspace/BotPico/src/pi_vision/pi_face_tracker/msg/Faces.msg"
   "${MSG_I_FLAGS}"
-  "/home/pi/workspace/BotPico/src/pi_vision/pi_face_tracker/msg/Face.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/pi/workspace/BotPico/src/pi_vision/pi_face_tracker/msg/Face.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/pi_face_tracker
 )
 
@@ -193,7 +193,7 @@ _generate_msg_lisp(pi_face_tracker
 _generate_msg_lisp(pi_face_tracker
   "/home/pi/workspace/BotPico/src/pi_vision/pi_face_tracker/msg/Faces.msg"
   "${MSG_I_FLAGS}"
-  "/home/pi/workspace/BotPico/src/pi_vision/pi_face_tracker/msg/Face.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/pi/workspace/BotPico/src/pi_vision/pi_face_tracker/msg/Face.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/pi_face_tracker
 )
 
@@ -258,7 +258,7 @@ _generate_msg_nodejs(pi_face_tracker
 _generate_msg_nodejs(pi_face_tracker
   "/home/pi/workspace/BotPico/src/pi_vision/pi_face_tracker/msg/Faces.msg"
   "${MSG_I_FLAGS}"
-  "/home/pi/workspace/BotPico/src/pi_vision/pi_face_tracker/msg/Face.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/pi/workspace/BotPico/src/pi_vision/pi_face_tracker/msg/Face.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/pi_face_tracker
 )
 
@@ -323,7 +323,7 @@ _generate_msg_py(pi_face_tracker
 _generate_msg_py(pi_face_tracker
   "/home/pi/workspace/BotPico/src/pi_vision/pi_face_tracker/msg/Faces.msg"
   "${MSG_I_FLAGS}"
-  "/home/pi/workspace/BotPico/src/pi_vision/pi_face_tracker/msg/Face.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/pi/workspace/BotPico/src/pi_vision/pi_face_tracker/msg/Face.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/pi_face_tracker
 )
 

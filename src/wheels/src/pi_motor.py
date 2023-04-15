@@ -16,22 +16,24 @@ def turnOffMotors():
 atexit.register(turnOffMotors)
 
 ################################# DC motor test!
-myMotorL = mh.getMotor(1)
-myMotorR = mh.getMotor(2)
+myMotorL = mh.getMotor(2)
+myMotorR = mh.getMotor(1)
 
 def motor_init():
     pass
 
 def motor_set_vel(l_mode, l_vel ,r_mode, r_vel):
 
-	if l_mode=='FWD':
-		myMotorL.run(Emakefun_MotorHAT.FORWARD)
-	else:
-		myMotorL.run(Emakefun_MotorHAT.BACKWARD)
-	if r_mode=='FWD':
-		myMotorR.run(Emakefun_MotorHAT.BACKWARD)
-	else:
-		myMotorR.run(Emakefun_MotorHAT.FORWARD)
-
-	myMotorL.setSpeed(l_vel)
+	myMotorL.setSpeed(l_vel*1.04)
 	myMotorR.setSpeed(r_vel)
+	
+	if l_mode=='FWD':
+		myMotorL.run(Emakefun_MotorHAT.BACKWARD)
+	else:
+		myMotorL.run(Emakefun_MotorHAT.FORWARD)
+	if r_mode=='FWD':
+		myMotorR.run(Emakefun_MotorHAT.FORWARD)
+	else:
+		myMotorR.run(Emakefun_MotorHAT.BACKWARD)
+
+	

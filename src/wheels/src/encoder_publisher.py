@@ -23,7 +23,7 @@ from rotary_encoder import Decoder
 
 import pi_motor
 
-MTR_DEBUG = False  # enable/disable printing of mtr pwm values
+MTR_DEBUG = True  # enable/disable printing of mtr pwm values
 
 # Set up gpio (Broadcom) pin aliases
 #left_mtr_spd_pin = 17
@@ -35,11 +35,16 @@ MTR_DEBUG = False  # enable/disable printing of mtr pwm values
 # right_mtr_in2_pin = 19
 
 #E1
-left_enc_A_pin = 5
-left_enc_B_pin = 6
+# left_enc_A_pin = 5
+# left_enc_B_pin = 6
+# right_enc_A_pin = 13
+# right_enc_B_pin = 19
 
-right_enc_A_pin = 13
-right_enc_B_pin = 19
+left_enc_A_pin = 13
+left_enc_B_pin = 19
+right_enc_A_pin = 5
+right_enc_B_pin = 6
+
 
 TRS_CURVE = rospy.get_param('ROBOT_TRS_CURVE')
 TRS_COEFF = None
@@ -102,6 +107,11 @@ def convert_cmd_vels_to_target_tick_rates(x, theta):
     if R_ttr != R_rate:
         R_ttr = R_rate
         new_ttr = True
+    # Are these new values?
+    L_ttr = L_rate
+    new_ttr = True
+    R_ttr = R_rate
+    new_ttr = True
 
 def tr_to_spd(tick_rate):
     """Convert tick_rate to spd (positive integer). Return spd.
@@ -226,9 +236,11 @@ def set_mtr_spd(pi, latr, ratr):
     L_PWM_val = L_spd + L_pid_trim
     R_PWM_val = R_spd + R_pid_trim
 
-    if L_spd and MTR_DEBUG:
-        print(f"R_spd={R_spd}\tR_pid_trim={R_pid_trim}\t\tL_spd={L_spd}\tL_pid_trim={L_pid_trim}")
-
+    if L_spd is not 0 and MTR_DEBUG:
+        print(f"R_spd={R_spd}\tR_pid_trim={R_pid_trim}\tR_err={R_err}\tL_spd={L_spd}\tL_pid_trim={L_pid_trim}\tL_err={L_err}")
+        # print(f"Rtarget={abs(R_ttr)}\tRcurrnet={ratr}\tR_err={R_err}\tLtarget={abs(L_ttr)}\tLcurrnet={latr}\tL_err={L_err}\tL_pid_trim={abs(L_pid_trim)}\tR_pid_trim={R_pid_trim}")
+    # print(f"L_pid_trim={(L_pid_trim)}\tL_err={L_err}\tR_pid_trim={R_pid_trim}\tR_err={R_err}\tL_PWM_val={L_PWM_val}\tR_PWM_val={R_PWM_val}")
+        
     # Limit PWM values to acceptable range
     if R_PWM_val > MAX_PWM_VAL:
         R_PWM_val = MAX_PWM_VAL
@@ -242,31 +254,8 @@ def set_mtr_spd(pi, latr, ratr):
 
     # Send PWM values to the motors
     # Set motor direction pins appropriately
-    '''if L_mode == 'FWD':
-        
-        pi.write(left_mtr_in1_pin, 0)
-        pi.write(left_mtr_in2_pin, 1)
-    elif L_mode == 'REV':
-        pi.write(left_mtr_in1_pin, 1)
-        pi.write(left_mtr_in2_pin, 0)
-    else:  # Parked
-        pi.write(left_mtr_in1_pin, 0)
-        pi.write(left_mtr_in2_pin, 0)
-
-    if R_mode == 'FWD':
-        pi.write(right_mtr_in1_pin, 0)
-        pi.write(right_mtr_in2_pin, 1)
-    elif R_mode == 'REV':
-        pi.write(right_mtr_in1_pin, 1)
-        pi.write(right_mtr_in2_pin, 0)
-    else:  # Parked
-        pi.write(right_mtr_in1_pin, 0)
-        pi.write(right_mtr_in2_pin, 0)
-
-    pi.set_PWM_dutycycle(left_mtr_spd_pin, L_PWM_val)
-    pi.set_PWM_dutycycle(right_mtr_spd_pin, R_PWM_val)
-    '''
     pi_motor.motor_set_vel(L_mode, L_PWM_val, R_mode, R_PWM_val)
+    # pi_motor.motor_set_vel(L_mode, L_PWM_val, R_mode, 0)
     
 left_pos = 0
 def left_enc_callback(tick):
@@ -332,6 +321,10 @@ if __name__ == '__main__':
         # Publish robot actual velocity
         actual_vel.linear.x = x_vel
         actual_vel.angular.z = z_vel
+        # if L_spd and MTR_DEBUG:
+        #     print(f"\t\t\t\t\t\tx_vel={abs(x_vel)}\tz_vel={z_vel}")
+        #     print(f"\t\t\t\t\t\tvel_sum={abs(R_atr + L_atr)}\tvel_dif={abs(R_atr - L_atr)}")
+
         robot_vel.publish(actual_vel)
 
         # Set motor speeds

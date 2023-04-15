@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/pi/workspace/BotPico/build
 include pi_vision/pi_face_tracker/CMakeFiles/_pi_face_tracker_generate_messages_check_deps_Faces.dir/progress.make
 
 pi_vision/pi_face_tracker/CMakeFiles/_pi_face_tracker_generate_messages_check_deps_Faces:
-	cd /home/pi/workspace/BotPico/build/pi_vision/pi_face_tracker && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py pi_face_tracker /home/pi/workspace/BotPico/src/pi_vision/pi_face_tracker/msg/Faces.msg pi_face_tracker/Face:geometry_msgs/Point
+	cd /home/pi/workspace/BotPico/build/pi_vision/pi_face_tracker && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py pi_face_tracker /home/pi/workspace/BotPico/src/pi_vision/pi_face_tracker/msg/Faces.msg geometry_msgs/Point:pi_face_tracker/Face
 
 _pi_face_tracker_generate_messages_check_deps_Faces: pi_vision/pi_face_tracker/CMakeFiles/_pi_face_tracker_generate_messages_check_deps_Faces
 _pi_face_tracker_generate_messages_check_deps_Faces: pi_vision/pi_face_tracker/CMakeFiles/_pi_face_tracker_generate_messages_check_deps_Faces.dir/build.make
